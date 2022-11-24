@@ -1,3 +1,4 @@
 <section>
-    <h1>TEST DE COUCOU</h1>
+   <a href="/membre/create">Creer membre</a>
+   <a href="/genre/create">Creer un genre</a>
 </section>

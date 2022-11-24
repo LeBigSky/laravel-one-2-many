@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\GenreController;
+use App\Http\Controllers\MemberController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +18,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home');
 });
+Route::resource('genre', GenreController::class);
+Route::resource('membre', MemberController::class);
