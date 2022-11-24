@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Genre;
 use App\Models\Member;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class MemberController extends Controller
 {
@@ -41,7 +42,8 @@ class MemberController extends Controller
     {
         $store= new Member();
         $store->nom = $request->nom;
-        $store->img = $request->img;
+        $store->img   = $request->file('img')->hashName();
+        Storage::put('public/', $request->file('img'));
         $store->age = $request->age;
         $store-> genre_id = $request ->genre_id;
         $store->save();
