@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home');
-});
+})->name('home');
 Route::resource('genre', GenreController::class);
 Route::resource('membre', MemberController::class);
+Route::get('download/{name}', [MemberController::class, 'download']);

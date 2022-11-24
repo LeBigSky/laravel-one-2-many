@@ -91,8 +91,15 @@ class MemberController extends Controller
      * @param  \App\Models\Member  $member
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Member $member)
+    public function destroy(Member $member, $id)
     {
-        //
+        $member= Member::find($id);
+        Storage::delete('public/'.$member->img);
+        $member->delete();
+        return redirect('membre');
     }
+    public function download ($name){
+        $path=public_path('storage/'.$name);
+        return response()->download($path);
+       }
 }

@@ -1,4 +1,5 @@
 <section>
+    <a href="{{ route('membre.index') }}">Back</a>
     <form action="{{ route('membre.store') }}" enctype="multipart/form-data" method="POST">
         @csrf
         <div class="mb-3">
